@@ -1,5 +1,5 @@
 {
-  "name": "react-view-pager",
+  "name": "react-view-pager-isomorphic",
   "version": "0.5.1",
   "description": "View-Pager/Slider/Carousel powered by React Motion.",
   "main": "lib/react-view-pager.js",
@@ -13,13 +13,13 @@
     "dev": "webpack-dev-server --inline --hot --progress --colors --host 0.0.0.0 --devtool eval",
     "postbuild": "NODE_ENV=production TARGET=minify webpack --config webpack.prod.config.js",
     "prebuild": "rm -rf dist && mkdir dist",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "test": "mocha tests/.setup.js --reporter spec tests/**/*.js",
     "deploy": "NODE_ENV=production TARGET=minify webpack && git-directory-deploy --directory example --branch gh-pages"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/souporserious/react-view-pager"
+    "url": "https://github.com/hanford/react-view-pager"
   },
   "keywords": [
     "react",
@@ -33,19 +33,19 @@
     "DOM",
     "browser"
   ],
-  "author": "Travis Arnold <travis@souporserious.com> (http://souporserious.com)",
+  "author": "Jack Hanford <jackhanford@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/souporserious/react-view-pager/issues"
+    "url": "https://github.com/hanford/react-view-pager/issues"
   },
-  "homepage": "https://github.com/souporserious/react-view-pager",
+  "homepage": "https://github.com/hanford/react-view-pager",
   "dependencies": {
-    "animation-bus": "^0.2.0",
-    "get-prefix": "^1.0.0",
-    "mitt": "^1.0.0",
-    "react-motion": "^0.5.0",
-    "resize-observer-polyfill": "^1.4.2",
-    "tabbable": "^1.0.5"
+    "animation-bus": "~0.2.0",
+    "get-prefix": "~1.0.0",
+    "mitt": "~1.0.0",
+    "react-motion": "~0.5.0",
+    "resize-observer-polyfill": "~1.4.2",
+    "tabbable": "~1.0.5"
   },
   "peerDependencies": {
     "prop-types": "^15.5.8",
