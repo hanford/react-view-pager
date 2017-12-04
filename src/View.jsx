@@ -42,15 +42,20 @@ class View extends Component {
   render() {
     const { pager } = this.context
     const { viewsToShow, axis } = pager.options
-    const { tag, trackSize, ...restProps } = this.props
+    const { tag, trackSize, enforceMaxWidth, ...restProps } = this.props
+
     let style = {
       ...restProps.style
+    }
+
+    if (enforceMaxWidth) {
+      style.maxWidth = enforceMaxWidth
     }
 
     // hide view visually until it has been added to the pager
     // this should help avoid FOUC
     if (!this._viewAdded) {
-      style.visibility = 'hidden'
+      style.display = 'inline-block'
       style.pointerEvents = 'none'
     }
 

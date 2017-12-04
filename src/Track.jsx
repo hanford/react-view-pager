@@ -92,6 +92,10 @@ class TrackScroller extends Component {
         ...style,
         ...pager.track.getStyles(trackPosition)
       }
+    } else {
+      style = {
+        width: '5000%'
+      }
     }
 
     return createElement(tag, {
@@ -211,6 +215,7 @@ class Track extends Component {
 
   _getTrackStyle() {
     let { trackPosition } = this.context.pager
+
     if (!this.state.instant) {
       trackPosition = spring(trackPosition, this.props.springConfig)
     }

@@ -46,17 +46,17 @@ class Frame extends Component {
 
     this._swipe = new Swipe(pager)
     this._keyboard = new Keyboard(pager)
+
+    // set frame size initially and then based on certain pager events
+    this._setFrameSize()
+    pager.on('viewChange', this._setFrameSize)
+    pager.on('hydrated', this._setFrameSize)
   }
 
   componentDidMount() {
     const { pager } = this.context
 
     pager.addFrame(findDOMNode(this))
-
-    // set frame size initially and then based on certain pager events
-    this._setFrameSize()
-    pager.on('viewChange', this._setFrameSize)
-    pager.on('hydrated', this._setFrameSize)
   }
 
   componentWillReceiveProps({ autoSize, accessibility }) {
